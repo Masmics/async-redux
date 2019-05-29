@@ -1,14 +1,20 @@
-// import React from 'react';
-// import { render } from 'react-dom';
 import { applyMiddleware, createStore } from 'redux';
 import { logger } from './logger';
-// import App from './components/App';
 
-// render(
-//   <App />,
-//   document.getElementById('root')
-// );
+function reducer(state = {}, action) {
+  switch(action.type) {
+    case 'Yo':
+      return 'Adrian';
+    default:
+      return state;
+  }
+}
 
-export default createStore(
+const store = createStore(
+  reducer,
   applyMiddleware(logger)
 );
+
+store.dispatch({
+  type: 'Hi'
+});

@@ -1,3 +1,7 @@
 const logger = store => next => action => {
-  // do stuff
+  console.log('Before reducer', store.getState());
+  next(action);
+  console.log('After reducer', store.getState());
 };
+
+export default logger;
