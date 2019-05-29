@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore } from 'redux';
-import { logger } from './logger';
+import logger from './middleware/logger';
 
 function reducer(state = {}, action) {
   switch(action.type) {
